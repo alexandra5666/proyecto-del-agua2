@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>consumo del agua</title>
+	<!-- estilos CSS -->
+	<link rel="stylesheet" href="css/estilos.css">
+	<!-- fuentes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!-- Icon fonts -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+	crossorigin="anonymous">
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apache.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/apache.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/apache.png">
+	<link rel="manifest" href="images/apache.png">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<style>
+		/*estilos generales */
+
+html, body {
+	height: 100%;
+}
+
+/*modificador de modelo de cajas de css*/
+
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	-webkit-box-sizing: inherit;
+			box-sizing: inherit;
+}
+
+/*resetear margenes y bordes*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+.container {
+	width: 90%;
+	max-width: 1366px;
+	margin: 0 auto;
+}
+/*estilos de los textos*/
+
+h2 {
+	font-size: 1.45rem;
+	margin-bottom: 20px;
+}
+
+p {
+	line-height: 1.8;
+	padding-right: 1em;
+	margin-bottom: 25px;
+}
+/*estilo de botones*/
+.btn {
+	display: block;
+	background-color: #ffa600;
+	width: 250px;
+	padding: 12px 1em;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #ffa600;
+}
+
+.btn:hover {
+	background-color: transparent;
+	color: #000;
+}
+
+.transparent {
+	display: inline-block;
+	border: 1px solid #ffa600;
+	padding: 12px 1em;
+	width: 250px;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+}
+
+.transparent:hover {
+	background-color: #ffa600;
+	color: #fff;
+}
+/*barra de navegacion*/
+
+#navbar {
+	background-color: #0b1245;
+}
+
+#navegation {
+	display: flex;
+	justify-content: space-between;
+}
+
+#main-nav {
+	display: flex;
+	list-style: none;
+	font-family: 'Lato', sans-serif;
+	float: right;
+}
+
+#main-nav li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 25px 0.9em;
+	display: inline-block;
+}
+
+#main-nav li:last-child {
+	color: gold;
+	padding: 25px 0.9em;
+}
+
+#main-nav li a:hover {
+	background-color: #060829;
+}
+
+#navbar-toggle {
+	color: #fff;
+	font-size: 1.5rem;
+	position: absolute;
+	top: 64px;
+	right: 35px;
+	display: none;
+}
+
+.top {
+	display: none;
+}
+/*pie de pagina*/
+footer {
+	background-color: #121018;
+}
+
+#PieDePagina {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 0;
+}
+
+footer h3 {
+	color: #9f9f9f;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+}
+
+footer ul {
+	margin: 20px 0;
+}
+
+footer li {
+	list-style: none;
+	padding: 5px 0px;
+}
+
+footer ul li a {
+	color: #9f9f9f;
+	text-decoration: none;
+	font-size: 0.88rem;
+}
+
+footer a img {
+	width: 160px;
+}
+
+#social {
+	text-align: center;
+}
+
+#social svg {
+	color: #fff;
+	margin-left: 1em;
+	font-size: 1.3rem;
+}
+
+#copyRight {
+	color: #9f9f9f;
+	text-align: center;
+	font-size: 0.8rem;
+	border-top: 1px solid #272323;
+	padding: 12px 0;
+}
+/*estilos de pagina de inicio*/
+/*seccion 1*/
+#seccionPrimera {
+	background-image: url(https://i.pinimg.com/originals/a4/99/95/a4999587d3f401156121e4ea456242bd.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+#seccionPrimera {
+	height: 100%;
+	min-height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#seccionPrimera h1 {
+	color: #000000;
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: arial, verdana, sans-serif;
+}
+
+#seccionPrimera p {
+	color: #000000;
+	font-size: 1.5rem;
+	padding: 15px 0;
+	margin-bottom: 0;
+}
+
+#seccionPrimera div {
+	text-align: center;
+}
+
+#seccionPrimera a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid;
+	display: inline-block;
+	padding: 12px 2.5em;
+	margin: 12px 0 0;
+}
+
+#seccionPrimera a:hover {
+	background-color: #aeaeae;
+	color: #000;
+}
+
+/*segunda seccion*/
+#seccionSegundo {
+	background-image: url(https://i.pinimg.com/564x/10/af/27/10af27153bcc0121f6363c642dd38674.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+#seccionSegundo {
+	display: flex;
+	padding: 80px 0;
+}
+
+#seccionSegundo div {
+	padding: 0 0.5em;
+	align-self: center;
+	flex-basis: 60%;
+}
+
+#seccionSegundo img {
+	flex-basis: 40%;
+	max-width: 40%;
+	align-self: flex-start;
+}
+/*seccion tres*/
+#seccionTercera {
+	background-image: url(https://i.pinimg.com/564x/fa/00/d0/fa00d0d9ee56693714e8f5997c65247d.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+article > section:nth-child(3) {
+	background-color: #f3f3f8;
+}
+
+#seccionTercera {
+	display: flex;
+}
+
+#seccionTercera.container {
+	width: 100%;
+}
+
+#seccionTercera div {
+	flex-basis: 50%;
+	padding-left: 2em;
+	align-self: center;
+}
+/*seccion cuatro*/
+
+article > section:nth-child(4) {
+	text-align: center;
+	padding: 80px 0 12px;
+}
+
+#seccionCuarta {
+	display: flex;
+	margin: 80px auto;
+}
+
+.col {
+	margin: 0 0.9em;
+}
+
+.col svg {
+	margin-bottom: 25px;
+}
+
+.col h3 {
+	margin-bottom: 12px;
+	color: #3c3c3c;
+	font-size: 1.1rem;
+	font-weight: 100;
+}
+
+.col p {
+	font-size: 0.85rem;
+	text-align: justify;
+}
+/*seccion cinco*/
+
+article > section:nth-child(5) {
+	background-color: #f3f1fe;
+	padding: 50px 0;
+}
+#seccionQuinta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*estilos de las paginas*/
+
+main header {
+	background-color: #e69807;
+	padding: 45px 0;
+	margin-bottom: 40px;
+}
+
+main header h1 {
+	font-size: 1.9rem;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#pages {
+	display: flex;
+	flex-flow: row wrap;
+	margin-bottom: 80px;
+}
+
+aside {
+	flex-basis: 30%;
+}
+
+#pages section {
+	flex-basis: 70%;
+	padding-right: 1em;
+	text-align: justify;
+	margin-bottom: 50px;
+}
+
+aside h3 {
+	background-color: #f3f1fe;
+	padding: 15px 0 12px 0.5em;
+	margin-bottom: 20px;
+	font-size: 1.20rem;
+	font-weight: 100;
+}
+
+aside ul {
+	list-style: none;
+	margin: 0 0 25px 0.5em;
+}
+
+aside ul li a {
+	text-decoration: none;
+	line-height: 1.8;
+	color: #0b1245;
+}
+
+aside ul li a:hover {
+	text-decoration: underline;
+}
+
+#socialMedia {
+	margin: 0 0 0px 0.5em;
+	font-size: 2.5rem;
+}
+
+#socialMedia svg {
+	margin-right: 0.8em;
+	color: #0b1245;
+}
+
+#boletin {
+	margin-left: 0.5em;
+}
+
+#boletin p {
+	font-size: 1rem;
+	margin: 12px;
+}
+
+#boletin label {
+	display: block;
+	font-size: 0.95rem;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+input#correo {
+	display: block;
+	width: 100%;
+	height: 45px;
+	margin-bottom: 12px;
+}
+
+#boletin input[type="submit"] {
+	background-color: #008000;
+	display: inline-block;
+	padding: 10px 1em;
+	color: #fff;
+	border: none;
+	width: 150px;
+	font-size: 0.95rem;
+}
+
+.row {
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 22px;
+}
+
+.row img {
+	float: left;
+	width: 55%;
+	margin-right: 1em;
+	margin-bottom: 12px;
+}
+
+form {
+	margin-right: 1em;
+}
+
+.asterisco {
+	color: #ff0000;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+	font-size: 0.98rem;
+}
+
+input[type="text"], input[type="email"] {
+	display: inline-block;
+	width: 100%;
+	height: 45px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+}
+
+textarea#comentario {
+	width: 100%;
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+
+input[type="submit"] {
+	background-color: #008000;
+	display: inline-block;
+	padding: 10px 1em;
+	width: 100%;
+	border: none;
+	color: #fff;
+	font-size: 1rem;
+}
+
+/*media queries*/
+@media screen and (max-width: 1199px) {
+	body {
+		font-size: 0.95rem;
+	}
+}
+
+/*estilos de viewport cuando tenga un tamaño que oscile entre 960px a 1100px*/
+
+@media screen and (min-width: 960px) and (max-width: 1100px) {
+
+	body {
+		font-size: 0.95rem;
+	}
+
+	#seccionPrimera h1 {
+	font-size: 2.5rem;
+}
+	#seccionPrimera h1 {
+	font-size: 2.5rem;
+}
+	h2 {
+	font-size: 1.3rem;
+}
+	#seccionTercera img {
+	flex-basis: 45%;
+	max-width: 45%;
+}
+#seccionTercera div {
+	flex-basis: 55%;
+	padding-right: 2em;
+}
+.col p {
+	text-align: center;
+}
+#pages {
+	margin-bottom: 12px;
+}
+#boletin p {
+	font-size: 0.95rem;
+}
+aside ul li a {
+	font-size: 0.95rem;
+}
+.row {
+	margin: 0 1em 25px 0;
+}
+.row img {
+	float: none;
+	width: 100%;
+}
+#pages .row:not(:last-child){
+	border-bottom: 1px solid #ccc;
+}
+.transparent {
+	margin-bottom: 30px;
+}
+.row svg {
+	margin-bottom: 20px;
+	margin-right: 1em;
+}
+}
+
+/*estilos de viewport cuando tenga un tamaño que sea igual o menor que 959px*/
+@media screen and (max-width: 959px) {
+	#seccionPrimera, #seccionSegunda, #seccionTercera, #seccionCuarta, #seccionQuinta {
+	flex-direction: column;
+}
+
+	#navegation {
+	display: block;
+}
+	#main-nav {
+	display: none;
+	flex-direction: column;
+}
+	#navbar-toggle {
+	display: block;
+}
+	#main-nav li a {
+	display: block;
+	padding: 20px 1em;
+}
+	#main-nav li:not(:last-child) {
+	border-bottom: 1px solid #353535;
+}
+	#main-nav li:last-child {
+	display: none;
+}
+.top {
+	background-color: #000;
+	color: gold;
+	padding: 12px 0;
+	font-size: 0.85rem;
+	display: block;
+}
+.top ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+}
+#seccionPrimera h1 {
+	font-size: 1.25rem;
+}
+#seccionSegundo, #seccionTercera, #seccionCuarta, #seccionquinta {
+	flex-direction: column;
+}
+#seccionSegundo div, #seccionTercera div {
+	padding: 0;
+	align-self: normal;
+	flex-basis: 100%;
+	text-align: center;
+}
+.btn, .transparent {
+	width: 100%;
+}
+.transparent {
+	margin-bottom: 20px;
+}
+ 
+
+#seccionTercera img {
+	display: none;
+}
+#seccionTercera.container {
+	width: 90%;
+	padding: 20px 0;
+}
+article > section:nth-child(4) {
+	text-align: center;
+	padding: 35px 0 12px 0;
+}
+#seccionCuarta {
+	margin: 35px auto;
+}
+.col {
+	margin: 20px 0.9em 30px;
+	border: 1px solid #ffd43b;
+	padding: 30px 2em;
+}
+.col p {
+	text-align: center;
+}
+#seccionQuinta {
+	text-align: center;
+}
+/*estilos al resto de paginos*/
+#pages section {
+	flex-basis: 100%;
+	padding-right: 0;
+}
+aside {
+	flex-basis: 100%;
+}
+.row img {
+	float: none;
+	width: 100%;
+}
+#pages .row:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+.row svg {
+	margin-bottom: 12px;
+	margin-right: 1em;
+}
+
+}
+/*estilos de viewport cuando tenga un tamaño que sea igual o menor que 659px*/
+@media screen and (max-width: 659) {
+	#PieDePagina {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+}
+	</style>
+
+</head>
+<body>
+	<!-- Cabecera -->
+	<div class="top">
+		<ul class="container">
+			
+		</ul>
+	</div>
+	<header>
+		<nav id="navbar">
+			<div id="navegation" class="container">
+			<a href="index.html"><img src="" alt=""></a>
+			<span id="navbar-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+			</span>
+			
+			<ul id="main-nav">
+				<li><a href="index.html"></a></li>
+				<li><a href="la-firma.html"></a></li>
+				<li><a href="areas-practicas.html"></a></li>
+				<li><a href="contacto.html"></a></li>
+			</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- cuerpo del documento -->
+	<main>
+		<article id="home">
+			<section>
+				<div id="seccionPrimera" class="container">
+					<div>
+						<h1></h1>
+						<p></p>
+						<a>CONCIENTIZAR EL CONSUMO DEL AGUA</a>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div id="seccionSegundo" class="container">
+					<div>
+					<h2></h2>
+					<p>Cada 20 años el consumo mundial de agua se duplica. Según ONU Habitat (Programa de las Naciones Unidas para Asentamientos Humanos), una de cada 4 ciudades del mundo se encuentra en regiones donde la demanda de agua es superior a la oferta. Y la calidad de este recurso natural se deteriora rápidamente a causa de la acción del hombre. Una persona consume en promedio 380 litros de agua diarios. Esto representa un 200% más de lo que recomienda la Organización Mundial de la Salud (OMS), que plantea el uso de 100 litros al día, o sea cinco o seis cubetas para satisfacer necesidades tanto de consumo como de higiene. </p>
+					<a class="btn" href="sobre-agua.html">Conocer más</a>
+
+					</div>
+
+					<img src="images/AHORRA AGUA.jpg" alt="imagen de dos personas estirando la mano">
+
+				</div>
+			</section>
+			<section>
+				<div id="seccionTercera" class="container">
+					<img src="images/7ab8641deb046978d6d6adb8315f0e59.jpg" alt="imagen de personas caminando por unas oficinas">
+					<div>
+					<h2></h2>
+					<p>El agua es un recurso escaso, y cada vez somos más lo que estamos concienciados e intentamos no desperdiciarl. Actualmente existen numerosas propuestas tecnológicas para expandir el acceso al agua potable, pero a menudo son caras o demasiado complejas para un uso sencillo sobre el terreno. Repasamos aquí algunas de las innovaciones más recientes y prometedoras.</p>
+					<a class="transparent" href="tecnoogias.html">Conocer más</a>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Tips para reducir o aprovechar el consumo del agua</h2>
+				
+
+				<div id="seccionCuarta" class="container">
+					<div class="col">
+						
+						<h3>Jardín</h3>
+						<img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/garden.png" alt="garden"/>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Riega sólo cuando sea necesario. Hazlo muy temprano o después de que se ponga el sol, para evitar la evaporación.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Riega justo de manera que el agua alcance a infiltrarse hasta las raíces de las plantas.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Aprovecha el agua de lluvia diseñando captaciones adecuadas. Esta es la mejor agua para las plantas.</p>
+					</div>
+					<div class="col">
+						
+						<h3>Baño</h3>
+						<img width="100" height="100" src="https://img.icons8.com/3d-fluency/100/bath.png" alt="bath"/>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Mientras esperas a que se caliente el agua de la ducha, aprovecha para llenar cualquier recipiente (existen bolsas específicas para tal propósito). Luego podrás reutilizar el agua almacenada para fregar o regar las plantas</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Toma duchas más breves y cierra las llaves mientras te enjabonas o aplicas champú.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Vigila periódicamente el estado de tu escusado, para que no haya derrames o fugas.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Cierra la llave del agua mientras te cepillas los dientes; de esta manera, una familia de cinco personas puede ahorrar hasta 40 litros de agua al día.</p>
+
+
+						
+					</div>
+					<div class="col">
+						
+						<h3>Lavadora</h3>
+						<img src="data:image/png;base64,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">
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Utiliza de forma eficiente los electrodomésticos: pon la lavadora, el lavavajillas y similares cuando estén totalmente llenos. Poner la lavadora cuando esté llena te puede hacer ahorrar de 2.500 a 2.800 litros cada mes.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Si el agua del enjuague final no contiene detergente se puede utilizar para regar, lavar, etc.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Talla a mano las partes muy sucias para evitar dobles o triples lavados.</p>
+					</div>
+					<div class="col">
+						
+						<h3>Recomendaciones generales</h3>
+						<img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/thumb-up--v1.png" alt="thumb-up--v1"/>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Repara o reporta cualquier fuga que observes en la casa, calle u oficina</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Promueve productos y emplea procesos industriales que no propicien la deforestación de bosques, para evitar erosiones del terreno y preservar la recarga de agua al subsuelo.</p>
+						<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVR4nGNgGPSAjYGBoZOBgeEZAwPDUwYGhg6oGE4AUvAfDXfg0/AMi4bn+DQ8xaLhCalOaifkaZAmkE1EeXoQAABitRt0rUp22gAAAABJRU5ErkJggg==">Vigila que las llaves de agua queden siempre bien cerradas después de usarlas.</p>
+					</div>
+				</div>
+			</section>
+			<section>
+				
+			</section>
+		</article>
+	</main>
+	<!-- pie de pagina -->
+	<footer>
+		<div id="PieDePagina" class="container">
+			<div>
+			</div>
+			<div>
+				
+					
+			</div>
+			</div>
+		</div>
+		<div id="copyRight">
+			
+		</div>
+	</footer>
+	<script>
+		// Comportamientos para el menú de navegación.
+    let mainNav=document.getElementById('main-nav');
+    let navbarToggle=document.getElementById('navbar-toggle');
+    navbarToggle.addEventListener('click',function() {
+
+    if (this.classList.contains('active')){
+        mainNav.style.display="none";
+        this.classList.remove('active');
+    }
+    else {
+        mainNav.style.display="flex";
+        this.classList.add('active');
+    }
+    });
+	</script>
+</body>
+</html>
